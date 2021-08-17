@@ -5,13 +5,59 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.0"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
+        classpath Deps.tools_gradleandroid//"com.android.tools.build:gradle:7.0.0"
+        classpath Deps.tools_kotlin//"org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
+
+        classpath HiltDeps.hilt_android_plugin_dep
+        classpath Deps.tools_remal_deps_check
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21'
+// task to check updates checkDependencyUpdates
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            apply plugin: "name.remal.check-updates"
+
+            android {
+                buildToolsVersion Config.buildTools
+                compileSdk Config.compileSdk
+
+                defaultConfig {
+                    minSdkVersion Config.minSdk
+                    targetSdkVersion Config.targetSdk
+                    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                }
+
+                compileOptions {
+                    sourceCompatibility Config.javaVersion
+                    targetCompatibility Config.javaVersion
+                }
+
+                kotlinOptions {
+                    jvmTarget = '1.8'
+                }
+
+                buildFeatures {
+                    viewBinding true
+                }
+
+            }
+        }
+    }
+}
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

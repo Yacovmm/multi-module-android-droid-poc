@@ -1,5 +1,5 @@
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
@@ -8,3 +8,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Pokemon Muilti module Arch"
 include ':app'
+include ':libraries:shared-ui'
+include ':features'
+include ':features:feature-a-private'
+include ':features:feature-a-public'
