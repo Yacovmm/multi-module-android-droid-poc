@@ -1,0 +1,31 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id "name.remal.check-updates"
+    id "kotlinx-serialization"
+}
+dependencies {
+    implementation project(':libraries:shared-utils')
+
+    // Hilt
+    implementation HiltDeps.hilt_impl_dep
+    kapt HiltDeps.hilt_kapt_compiler
+
+    // Retrofit
+    implementation Deps.retrofit
+    implementation Deps.ok_http
+    implementation Deps.ok_http_interceptor
+    implementation Deps.gson_converter
+    implementation Deps.serialization_dep
+    implementation Deps.serializationx_converter
+    implementation Deps.androidx_core
+
+    // Coroutines
+    implementation CoroutinesDeps.coroutine_core
+    implementation CoroutinesDeps.coroutine_android
+    implementation CoroutinesDeps.legacy_support
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.5.21"
+
+}

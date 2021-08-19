@@ -1,0 +1,19 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'kotlin-kapt'
+    id "name.remal.check-updates"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation project(':libraries:shared-utils')
+    implementation project(':features:auth:auth-public')
+
+    // Retrofit
+    implementation Deps.retrofit
+}

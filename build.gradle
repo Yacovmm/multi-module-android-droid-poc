@@ -11,6 +11,7 @@ buildscript {
         classpath HiltDeps.hilt_android_plugin_dep
         classpath Deps.tools_remal_deps_check
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21'
+        classpath Deps.kotlin_serialization
 // task to check updates checkDependencyUpdates
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -28,7 +29,7 @@ allprojects {
 subprojects {
     afterEvaluate { project ->
         if (project.hasProperty('android')) {
-            apply plugin: "name.remal.check-updates"
+//            apply from: "name.remal.check-updates"
 
             android {
                 buildToolsVersion Config.buildTools

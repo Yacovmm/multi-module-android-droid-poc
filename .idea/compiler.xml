@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8">
+    <bytecodeTargetLevel target="1.7">
       <module name="Pokemon_Muilti_module_Arch.app" target="11" />
       <module name="Pokemon_Muilti_module_Arch.buildSrc" target="11" />
+      <module name="Pokemon_Muilti_module_Arch.features.auth.auth-private" target="11" />
       <module name="Pokemon_Muilti_module_Arch.features.feature-a-private" target="11" />
+      <module name="Pokemon_Muilti_module_Arch.features.feature-a.feature-a-private" target="11" />
+      <module name="Pokemon_Muilti_module_Arch.features.feature-a.feature-a-public" target="1.8" />
+      <module name="Pokemon_Muilti_module_Arch.libraries.core" target="11" />
       <module name="Pokemon_Muilti_module_Arch.libraries.shared-ui" target="11" />
     </bytecodeTargetLevel>
   </component>

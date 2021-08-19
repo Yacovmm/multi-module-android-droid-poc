@@ -1,6 +1,7 @@
 package com.example.pokemonmuiltimodulearch
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.example.pokemonmuiltimodulearch.databinding.ActivityMainBinding
@@ -8,44 +9,37 @@ import com.example.pokemonmuiltimodulearch.di.ScreenNavigation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-interface Teste {
-    fun getSupportFragmentManagerTeste(): FragmentManager
+interface IFragmentManagerInterface {
+    fun getSupportFragmentManagerHelper(): FragmentManager
 }
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(), Teste  {
+class MainActivity : AppCompatActivity(), IFragmentManagerInterface {
 
     lateinit var binding: ActivityMainBinding
 
     @Inject
     lateinit var screenNavigation: ScreenNavigation
 
-    override fun getSupportFragmentManagerTeste(): FragmentManager {
+    override fun getSupportFragmentManagerHelper(): FragmentManager {
         return supportFragmentManager
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        setupScreenNavigatin(savedInstanceState)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(screenNavigation.isRootFragment().not())
+
         setContentView(binding.root)
+    }
 
-//        fragNavController = FragNavController(supportFragmentManager, R.id.nav_host_fragment)
-//        fragNavController.apply {
-//            transactionListener = this@BaseActivity
-//
-//            defaultTransactionOptions = FragNavTransactionOptions.newBuilder().customAnimations(
-//                R.anim.slide_in_from_right, R.anim.slide_out_to_left,
-//                R.anim.slide_in_from_left, R.anim.slide_out_to_right
-//            ).build()
-//
-//            fragmentHideStrategy = FragNavController.DETACH
-//        }
-//
-//        fragNavController.rootFragments = rootFragments()
-//        fragNavController.initialize(FragNavController.TAB1, savedInstanceState)
-//
-
+    private fun setupScreenNavigatin(savedInstanceState: Bundle?) {
         screenNavigation.init(savedInstanceState)
+        screenNavigation.transactionCB = { fragment, transactionType ->
+            supportActionBar?.setDisplayHomeAsUpEnabled(screenNavigation.isRootFragment().not())
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -54,8 +48,15 @@ class MainActivity : AppCompatActivity(), Teste  {
     }
 
     override fun onBackPressed() {
-        if (!screenNavigation.navigateBack()) {
+        if (screenNavigation.navigateBack().not()) {
             super.onBackPressed()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return true
     }
 }

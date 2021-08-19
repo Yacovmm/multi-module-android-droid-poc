@@ -1,0 +1,11 @@
+{
+  "statusCode": "200",
+  "errors" : [
+    "Erro 1",
+    "Erro 2"
+  ],
+  "serializedResponse": {
+    "name": "Yacov",
+    "type" : "Dev Mobile"
+  }
+}

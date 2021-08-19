@@ -6,10 +6,16 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Pokemon_Muilti_module_Arch.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Pokemon_Muilti_module_Arch.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Pokemon_Muilti_module_Arch.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/Pokemon_Muilti_module_Arch.buildSrc.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/Pokemon_Muilti_module_Arch.features.iml" filepath="$PROJECT_DIR$/.idea/modules/features/Pokemon_Muilti_module_Arch.features.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/feature-a/Pokemon_Muilti_module_Arch.features.feature-a-private.iml" filepath="$PROJECT_DIR$/.idea/modules/features/feature-a/Pokemon_Muilti_module_Arch.features.feature-a-private.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/feature-a-public/Pokemon_Muilti_module_Arch.features.feature-a-public.iml" filepath="$PROJECT_DIR$/.idea/modules/features/feature-a-public/Pokemon_Muilti_module_Arch.features.feature-a-public.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/auth/Pokemon_Muilti_module_Arch.features.auth.iml" filepath="$PROJECT_DIR$/.idea/modules/features/auth/Pokemon_Muilti_module_Arch.features.auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/auth/auth-private/Pokemon_Muilti_module_Arch.features.auth.auth-private.iml" filepath="$PROJECT_DIR$/.idea/modules/features/auth/auth-private/Pokemon_Muilti_module_Arch.features.auth.auth-private.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/auth/auth-public/Pokemon_Muilti_module_Arch.features.auth.auth-public.iml" filepath="$PROJECT_DIR$/.idea/modules/features/auth/auth-public/Pokemon_Muilti_module_Arch.features.auth.auth-public.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/feature-a/Pokemon_Muilti_module_Arch.features.feature-a.iml" filepath="$PROJECT_DIR$/.idea/modules/features/feature-a/Pokemon_Muilti_module_Arch.features.feature-a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/feature-a/feature-a-private/Pokemon_Muilti_module_Arch.features.feature-a.feature-a-private.iml" filepath="$PROJECT_DIR$/.idea/modules/features/feature-a/feature-a-private/Pokemon_Muilti_module_Arch.features.feature-a.feature-a-private.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/features/feature-a/feature-a-public/Pokemon_Muilti_module_Arch.features.feature-a.feature-a-public.iml" filepath="$PROJECT_DIR$/.idea/modules/features/feature-a/feature-a-public/Pokemon_Muilti_module_Arch.features.feature-a.feature-a-public.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/libraries/Pokemon_Muilti_module_Arch.libraries.iml" filepath="$PROJECT_DIR$/.idea/modules/libraries/Pokemon_Muilti_module_Arch.libraries.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libraries/core/Pokemon_Muilti_module_Arch.libraries.core.iml" filepath="$PROJECT_DIR$/.idea/modules/libraries/core/Pokemon_Muilti_module_Arch.libraries.core.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/libraries/shared-ui/Pokemon_Muilti_module_Arch.libraries.shared-ui.iml" filepath="$PROJECT_DIR$/.idea/modules/libraries/shared-ui/Pokemon_Muilti_module_Arch.libraries.shared-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libraries/shared-utils/Pokemon_Muilti_module_Arch.libraries.shared-utils.iml" filepath="$PROJECT_DIR$/.idea/modules/libraries/shared-utils/Pokemon_Muilti_module_Arch.libraries.shared-utils.iml" />
     </modules>
   </component>
 </project>

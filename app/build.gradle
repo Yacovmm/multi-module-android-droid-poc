@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id "name.remal.check-updates"
+    id "kotlinx-serialization"
 }
 apply from: 'https://raw.githubusercontent.com/JakeWharton/SdkSearch/master/gradle/projectDependencyGraph.gradle'
 
@@ -34,8 +36,11 @@ def allKaptTestsConfigs(dependency) {
 
 dependencies {
     implementation project(':libraries:shared-ui')
-    implementation project(':features:feature-a-public')
-    implementation project(':features:feature-a-private')
+    implementation project(':libraries:core')
+    implementation project(':features:feature-a:feature-a-public')
+    implementation project(':features:feature-a:feature-a-private')
+    implementation project(':features:auth:auth-public')
+    implementation project(':features:auth:auth-private')
 
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
@@ -54,6 +59,14 @@ dependencies {
     // FragNav
     implementation Deps.frag_nav
 
+    // Retrofit
+    implementation Deps.retrofit
+    implementation Deps.ok_http
+    implementation Deps.ok_http_interceptor
+    implementation Deps.gson_converter
+    implementation Deps.serialization_dep
+    implementation Deps.serializationx_converter
+    implementation Deps.androidx_core
 }
 
 kapt {

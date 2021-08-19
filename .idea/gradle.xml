@@ -13,10 +13,16 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/features" />
-            <option value="$PROJECT_DIR$/features/feature-a-private" />
-            <option value="$PROJECT_DIR$/features/feature-a-public" />
+            <option value="$PROJECT_DIR$/features/auth" />
+            <option value="$PROJECT_DIR$/features/auth/auth-private" />
+            <option value="$PROJECT_DIR$/features/auth/auth-public" />
+            <option value="$PROJECT_DIR$/features/feature-a" />
+            <option value="$PROJECT_DIR$/features/feature-a/feature-a-private" />
+            <option value="$PROJECT_DIR$/features/feature-a/feature-a-public" />
             <option value="$PROJECT_DIR$/libraries" />
+            <option value="$PROJECT_DIR$/libraries/core" />
             <option value="$PROJECT_DIR$/libraries/shared-ui" />
+            <option value="$PROJECT_DIR$/libraries/shared-utils" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,0 +1,31 @@
+{
+  "statusCode": "200",
+  "errors" : [
+    "Erro 1",
+    "Erro 2"
+  ],
+  "serializedResponse": {
+    "urls" : [
+      {
+        "id" : 1,
+        "name" : "endpoint_pix",
+        "path" : "/pix"
+      },
+      {
+        "id" : 2,
+        "name" : "endpoint_pix",
+        "path" : "/veiculos"
+      },
+      {
+        "id" : 3,
+        "name" : "endpoint_pix",
+        "path" : "/credito"
+      },
+      {
+        "id" : 4,
+        "name" : "endpoint_pix",
+        "path" : "/finance"
+      }
+    ]
+  }
+}

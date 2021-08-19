@@ -1,0 +1,13 @@
+{
+  "statusCode": "200",
+  "errors" : [
+    "Erro 1",
+    "Erro 2"
+  ],
+  "serializedResponse": {
+    "id": 1,
+    "name" : "Yacov Rosenberg",
+    "isValid" : true
+
+  }
+}
