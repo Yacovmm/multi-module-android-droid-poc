@@ -29,9 +29,9 @@ class FeatureASecondFragment : BaseFragment<FragmentFeatureAFirstBinding>() {
     override fun setupFragment() {
         binding.tvTitle.text = arguments?.getString(ARG_PARAM2) ?: "Tela 2"
 
-        binding.tv1.setOnClickListener {
-            
-        }
+//        binding.tv1.setOnClickListener {
+//
+//        }
     }
 
 }
