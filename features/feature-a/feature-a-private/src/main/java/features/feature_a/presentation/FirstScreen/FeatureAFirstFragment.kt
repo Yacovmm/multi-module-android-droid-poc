@@ -4,15 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -62,7 +64,94 @@ class FeatureAFirstFragment : BaseFragment<FragmentFeatureAFirstBinding>() {
 
         bindViews()
 
+        setupSpinner()
+
         setupListUrls(items = viewModel.urlsList)
+    }
+
+    private fun setupSpinner() {
+        binding.spinner.setContent {
+            FilterSelection()
+        }
+    }
+
+    @Composable
+    fun DropDownList(
+        requestToOpen: Boolean = false,
+        list: List<String>,
+        request: (Boolean) -> Unit,
+        selectedString: (String) -> Unit
+    ) {
+        DropdownMenu(
+            modifier = Modifier.fillMaxWidth(),
+            expanded = requestToOpen,
+            onDismissRequest = { request(false) },
+        ) {
+            list.forEach {
+                DropdownMenuItem(
+                    modifier = Modifier.wrapContentWidth(
+                        align = Alignment.CenterHorizontally
+                    ).wrapContentHeight(),
+                    onClick = {
+                        request(false)
+                        selectedString(it)
+                    }
+                ) {
+                    Text(
+                        it,
+                        modifier = Modifier
+                            .wrapContentWidth()
+                    )
+                }
+            }
+        }
+    }
+
+    @Composable
+    fun FilterSelection() {
+        val filterList = listOf(
+            "",
+            "A-Z",
+            "Z-A",
+            "PIX",
+        )
+        val text = remember { mutableStateOf("") } // initial value
+        val isOpen = remember { mutableStateOf(false) } // initial value
+        val openCloseOfDropDownList: (Boolean) -> Unit = {
+            isOpen.value = it
+        }
+        val userSelectedString: (String) -> Unit = {
+            text.value = it
+        }
+        Box {
+            Column {
+                TextField(
+                    value = text.value,
+                    onValueChange = { text.value = it },
+                    label = { Text(text = "Filter") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 15.dp),
+                    enabled = false
+                )
+                DropDownList(
+                    requestToOpen = isOpen.value,
+                    list = filterList,
+                    openCloseOfDropDownList,
+                    userSelectedString
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .matchParentSize()
+                    .alpha(0f)
+                    .background(Color.Transparent)
+                    .padding(10.dp)
+                    .clickable(
+                        onClick = { isOpen.value = true }
+                    )
+            )
+        }
     }
 
     private fun setupListUrls(items: List<UrlEntity>) {

@@ -67,7 +67,7 @@ class InterceptorsModule {
                 .body(json.toResponseBody("application/json".toMediaType()))
                 .message("Nothing")
                 .build()
-            runBlocking { delay(2000) }
+            runBlocking { delay(500) }
             response
         }
     }
