@@ -16,8 +16,6 @@ class FirstScreenViewModel @Inject constructor(
     private val featureARepository: IFeatureARepository
 ) : ViewModel() {
 
-    var urlsList: List<UrlEntity> = emptyList()
-
     private val _testeLiveData = MutableLiveData<TesteResponse>()
     val testeLiveData: LiveData<TesteResponse>
         get() = _testeLiveData
@@ -26,5 +24,28 @@ class FirstScreenViewModel @Inject constructor(
         val response = featureARepository.getTeste()
 
         _testeLiveData.postValue(response)
+    }
+
+    var urlsList: List<UrlEntity> = emptyList()
+        set(value) {
+            field = value
+            _filteredLiveData.postValue(field)
+        }
+
+    val filterList = listOf("", "A-Z", "Z-A")
+
+    private val _filteredLiveData = MutableLiveData<List<UrlEntity>>()
+    val filteredLiveData: LiveData<List<UrlEntity>>
+        get() = _filteredLiveData
+
+    fun orderBySpinner(pos: Int) {
+        when (pos) {
+            1 -> {
+                // Order A-Z
+                val orderedList = urlsList.sortedBy { it.name }
+                _filteredLiveData.postValue(orderedList)
+            }
+            else -> _filteredLiveData.postValue(urlsList)
+        }
     }
 }

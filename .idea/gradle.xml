@@ -23,6 +23,7 @@
             <option value="$PROJECT_DIR$/libraries/core" />
             <option value="$PROJECT_DIR$/libraries/shared-ui" />
             <option value="$PROJECT_DIR$/libraries/shared-utils" />
+            <option value="$PROJECT_DIR$/libraries/test-utils" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

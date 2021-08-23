@@ -10,6 +10,7 @@
       <module name="Pokemon_Muilti_module_Arch.features.feature-a.feature-a-public" target="1.8" />
       <module name="Pokemon_Muilti_module_Arch.libraries.core" target="11" />
       <module name="Pokemon_Muilti_module_Arch.libraries.shared-ui" target="11" />
+      <module name="Pokemon_Muilti_module_Arch.libraries.test-utils" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

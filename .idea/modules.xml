@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/libraries/core/Pokemon_Muilti_module_Arch.libraries.core.iml" filepath="$PROJECT_DIR$/.idea/modules/libraries/core/Pokemon_Muilti_module_Arch.libraries.core.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/libraries/shared-ui/Pokemon_Muilti_module_Arch.libraries.shared-ui.iml" filepath="$PROJECT_DIR$/.idea/modules/libraries/shared-ui/Pokemon_Muilti_module_Arch.libraries.shared-ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/libraries/shared-utils/Pokemon_Muilti_module_Arch.libraries.shared-utils.iml" filepath="$PROJECT_DIR$/.idea/modules/libraries/shared-utils/Pokemon_Muilti_module_Arch.libraries.shared-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libraries/test-utils/Pokemon_Muilti_module_Arch.libraries.test-utils.iml" filepath="$PROJECT_DIR$/.idea/modules/libraries/test-utils/Pokemon_Muilti_module_Arch.libraries.test-utils.iml" />
     </modules>
   </component>
 </project>

@@ -2,7 +2,10 @@ package features.feature_a.presentation.FirstScreen
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -23,6 +26,7 @@ import com.example.shared_ui.baseComponents.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import features.auth.auth_public.data.repository.IAuthRepository
 import features.auth.auth_public.domain.entities.UrlEntity
+import features.feature_a.R
 import features.feature_a.databinding.FragmentFeatureAFirstBinding
 import features.feature_a_public.navigation.IFeatureANavigation
 import javax.inject.Inject
@@ -65,14 +69,24 @@ class FeatureAFirstFragment : BaseFragment<FragmentFeatureAFirstBinding>() {
         bindViews()
 
         setupSpinner()
-
-        setupListUrls(items = viewModel.urlsList)
     }
 
     private fun setupSpinner() {
-        binding.spinner.setContent {
-            FilterSelection()
+        val adapter = ArrayAdapter(
+            requireContext(),
+            R.layout.support_simple_spinner_dropdown_item,
+            viewModel.filterList
+        )
+        binding.spinner.adapter = adapter
+        binding.spinner.onItemSelectedListener = filterSpinnerListener
+    }
+
+    private val filterSpinnerListener = object : AdapterView.OnItemSelectedListener {
+        override fun onItemSelected(parent: AdapterView<*>?, view: View?, pos: Int, id: Long) {
+            viewModel.orderBySpinner(pos)
         }
+
+        override fun onNothingSelected(p0: AdapterView<*>?) {}
     }
 
     @Composable
@@ -200,9 +214,8 @@ class FeatureAFirstFragment : BaseFragment<FragmentFeatureAFirstBinding>() {
     }
 
     private fun setupObservers() {
-        viewModel.testeLiveData.observe(viewLifecycleOwner) {
-//            binding.tv1.text = it.name
-//            binding.tv2.text = it.type
+        viewModel.filteredLiveData.observe(viewLifecycleOwner) {
+            setupListUrls(items = it)
         }
     }
 }
