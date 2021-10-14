@@ -28,16 +28,16 @@ class MainActivity : AppCompatActivity(), IFragmentManagerInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setupScreenNavigatin(savedInstanceState)
+        setupScreenNavigation(savedInstanceState)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(screenNavigation.isRootFragment().not())
 
         setContentView(binding.root)
     }
 
-    private fun setupScreenNavigatin(savedInstanceState: Bundle?) {
+    private fun setupScreenNavigation(savedInstanceState: Bundle?) {
         screenNavigation.init(savedInstanceState)
-        screenNavigation.transactionCB = { fragment, transactionType ->
+        screenNavigation.transactionCB = { _, _ ->
             supportActionBar?.setDisplayHomeAsUpEnabled(screenNavigation.isRootFragment().not())
         }
     }

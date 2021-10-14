@@ -8,23 +8,28 @@
     "urls" : [
       {
         "id" : 1,
-        "name" : "endpoint_pix",
+        "name" : "pix",
         "path" : "/pix"
       },
       {
         "id" : 2,
-        "name" : "endpoint_pix",
+        "name" : "veiculos",
         "path" : "/veiculos"
       },
       {
         "id" : 3,
-        "name" : "endpoint_pix",
+        "name" : "credito",
         "path" : "/credito"
       },
       {
         "id" : 4,
-        "name" : "endpoint_pix",
+        "name" : "finance",
         "path" : "/finance"
+      },
+      {
+        "id" : 4,
+        "name" : "auth",
+        "path" : "auth"
       }
     ]
   }
